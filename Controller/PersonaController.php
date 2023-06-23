@@ -68,16 +68,14 @@ class PersonaController {
 }
 
 $Persona = new PersonaController($conn);
-if ($_POST['agregar']) {
+if (isset($_POST['agregar'])) {
     $Persona->agregarPersona($_POST);
-}
-
-else if ($_POST['actualizar']) {
+} else if (isset($_POST['actualizar'])) {
     $Persona->actualizarPersona($_POST);
+} else if (isset($_POST['eliminar'])) {
+    $idpersona = $_POST['idpersona']; // Reemplaza 'idpersona' con la clave correcta en $_POST
+    $Persona->eliminarPersona($idpersona);
 }
 
-else if ($_POST['eliminar']) {
-    $Persona->eliminarPersona($_POST);
-}
 ?>
 
