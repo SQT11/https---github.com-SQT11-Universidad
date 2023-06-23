@@ -28,9 +28,9 @@
     </nav>
 
     <div class="formulario">
-      <form action="../includes/salon.php" method="POST">
+      <form action="../Controller/SalonController.php" method="POST">
         <!-- Aquí van los campos del formulario -->
-        <input type="text" name="idSalon" placeholder="ID Salon">
+        <input type="text" name="idsalon" placeholder="ID Salon">
         <input type="text" name="nombre" placeholder="Nombre"  require>
         <input type="text" name="cantidad" placeholder="Cantidad"require>
       
@@ -54,38 +54,25 @@
               </thead>
               <tbody>
               <?php
-                    // Conectar a la base de datos
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "Universidad";
-                    
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    if ($conn->connect_error) {
-                        die("Conexión fallida: " . $conn->connect_error);
-                    }
-                    
-                    // Obtener los datos de la tabla "persona"
-                    $sql = "SELECT * FROM salon";
-                    $result = $conn->query($sql);
-                    
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["sal_id"] . "</td>";
-                            echo "<td>" . $row["sal_nombre"] . "</td>";
-                            echo "<td>" . $row["sal_cantidad"] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='5'>No hay registros</td></tr>";
-                    }
+                include_once("../core/config.php");
+                include("../Models/SalonModel.php");
+                // Crear una instancia de SalonModel y pasar la conexión como parámetro al constructor
+                $salonModel = new SalonModel($conn);
+                // Obtener todos los datos de las personas
+                $salones = $salonModel->getAllData();
 
-                    $conn->close();
+                // Recorrer los datos y generar las filas de la tabla
+                foreach ($salones as $salones) {
+                  echo "<tr>";
+                  echo "<td>" . $salones['sal_id'] . "</td>";
+                  echo "<td>" . $salones['sal_nombre'] . "</td>";
+                  echo "<td>" . $salones['sal_cantidad'] . "</td>";
+                  echo "</tr>";
+                }
+
+                // Cerrar la conexión a la base de datos
+                $conn->close();
                 ?>
-
-
-
               </tbody>
             </table>
           </div>
