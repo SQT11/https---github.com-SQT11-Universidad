@@ -28,9 +28,9 @@
     </nav>
 
     <div class="formulario">
-      <form action="../includes/asignatura.php" method="POST">
+      <form action="../Controller/AsignaturaController.php" method="POST">
         <!-- Aquí van los campos del formulario -->
-        <input type="text" name="idAsignatura" placeholder="ID Asignatura">
+        <input type="text" name="idasignatura" placeholder="ID Asignatura">
         <input type="text" name="nombre" placeholder="Nombre"  require>
         <input type="text" name="descripcion" placeholder="Descripcion"require>
         <input type="text" name="facultad" placeholder="facultad" require>
