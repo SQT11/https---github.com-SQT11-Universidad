@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/index2.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
     <title>Proyecto Universidad</title>
 </head>
 
 <body>
     <nav>
         <div class="profile-pic">
-            <img src="../Fotos/Logo.jpg" alt="Foto de perfil">
+            <img src="../images/Logo.jpg" alt="Foto de perfil">
         </div>
         <ul>
         <li><a href="../index.php">Home</a></li>
@@ -27,9 +27,9 @@
         </div>
     </nav>
     <div class="slider">
-        <img src="../Fotos/Foto1.jfif" alt="Imagen 1">
-        <img src="../Fotos/Foto2.jfif" alt="Imagen 2">
-        <img src="../Fotos/Foto3.jfif" alt="Imagen 3">
+        <img src="../images/Foto1.jfif" alt="Imagen 1">
+        <img src="../images/Foto2.jfif" alt="Imagen 2">
+        <img src="../images/Foto3.jfif" alt="Imagen 3">
     </div>
     <div class="content">
         <h1>Contenido de la página</h1>

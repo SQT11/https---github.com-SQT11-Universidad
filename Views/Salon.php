@@ -12,7 +12,7 @@
 <body>
 <nav>
         <div class="profile-pic">
-            <img src="../Fotos/Logo.jpg" alt="Foto de perfil">
+            <img src="../images/Logo.jpg" alt="Foto de perfil">
         </div>
         <ul>
         <li><a href="../index.php">Home</a></li>

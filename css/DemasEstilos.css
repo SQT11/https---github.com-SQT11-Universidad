@@ -1,18 +1,24 @@
 /* >>>Index<<< */
 body {
+ font-size: 16px; /* Tamaño base del texto */
   margin: 0;
   padding: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #3C4E6B;
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 }
 
 nav {
-  background-color: #9EA8B8;
   padding: 10px;
   display: flex;
   align-items: center;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
 }
 
 .profile-pic {
@@ -43,25 +49,32 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
   padding: 10px;
+}
+
+
+nav ul li a:hover{
+  background-color: #24243e;
 }
 
 .login-btn {
   margin-left: auto; /* Alinea el botón de inicio de sesión a la derecha */
 }
-
 .btn-login {
+  font-size: 16px;
+  display: flex;
   color: #fff;
   border-radius: 100px;
-  background-color: #3C4E6B;
-  padding: 10px 20px; /* Ajusta los valores de padding según tus necesidades */
+  background-color: #302b63;
+  padding: 10px 20px;
   text-decoration: none;
+  border: 2px solid #000000; /* Agrega un borde sólido de 1 píxel */
 }
 
 .btn-login:hover {
-  background-color: #5C626B;
+  background-color: #24243e;
 }
 
 .table-container {
@@ -81,30 +94,35 @@ nav ul li a {
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #dee2e6;
+  border-top: 1px solid #010101;
 }
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
+  border-bottom: 2px solid #020202;
 }
 
 .table tbody + tbody {
-  border-top: 2px solid #dee2e6;
+  border-top: 2px solid #000000;
 }
 
 .content {
   flex: 1;
   padding: 20px;
   background-color: #3C4E6B;
+  background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .formulario form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #3C4E6B;
   padding: 20px;
+  background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .formulario input,
@@ -119,26 +137,43 @@ nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #3C4E6B;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 500px;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.slider img {
+  max-width: 100%;
+  height: auto;
 }
 
 .boton button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 40px;
   margin-right: 40px;
   border-radius: 7px;
   height: 25px;
-  width: 100px;
-  background-color: #9EA8B8;
+  width: 500px;
+  background-color: #302b63;
+  color: #fff;
+  border: 2px solid #000000; /* Agrega un borde sólido de 1 píxel */
+}
+.boton button :hover{
+  background-color: #24243e;
 }
 
 footer {
-  background-color: #5C626B;
   padding: 10px;
   text-align: center;
   color: #fff; /* Agrega color de texto blanco */
+  background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @media (max-width: 768px) {

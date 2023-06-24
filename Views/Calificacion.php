@@ -12,7 +12,7 @@
 <body>
       <nav>
         <div class="profile-pic">
-            <img src="../Fotos/Logo.jpg" alt="Foto de perfil">
+            <img src="../images/Logo.jpg" alt="Foto de perfil">
         </div>
         <ul>
         <li><a href="../index.php">Home</a></li>
@@ -23,7 +23,7 @@
           <li><a href="Matricula.php">Matricula</a></li>
         </ul>
         <div class="login-btn">
-            <a class="btn-login" href="/Views/login.php">Iniciar sesión</a>
+            <a class="btn-login" href="../Views/login.php">Iniciar sesión</a>
         </div>
      </nav>
 

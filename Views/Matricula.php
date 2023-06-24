@@ -12,7 +12,7 @@
 <body>
 <nav>
         <div class="profile-pic">
-            <img src="../Fotos/Logo.jpg" alt="Foto de perfil">
+            <img src="../images/Logo.jpg" alt="Foto de perfil">
         </div>
         <ul>
         <li><a href="../index.php">Home</a></li>
@@ -31,19 +31,10 @@
     <div class="formulario">
       <form action="../includes/matricula.php" method="POST">
         <!-- Aquí van los campos del formulario -->
-        <input type="text" name="idmatricula" placeholder="ID Matricula">
-        <input type="text" name="asignatura" placeholder="Asignatura"  require>
-        <input type="text" name="nombre" placeholder="Nombre"  require>
-        <input type="text" name="documento" placeholder="Documento"require>
-        <input type="text" name="correo" placeholder="Correo"require>
-        <input type="text" name="telefono" placeholder="Telefono"require>
         <select class="dropdown" name="opcion[]" multipe require>
-        <option value="">Seleccione una opción</option>
-        <option value="Estudiante" >Estudiante</option>
-        <option value="Docente">Docente</option>
-      </select>
-        <input type="text" name="calificacion" placeholder="Calificacion"require>
-      
+        </select>
+        <select class="dropdown" name="opcion[]" multipe require> 
+        </select>
         <div class="boton">
           <button class="agregar" name="agregar">Agregar</button>
           <button class="actualizar" name="actualizar">Actualizar</button>

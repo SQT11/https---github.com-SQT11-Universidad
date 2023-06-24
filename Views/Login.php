@@ -24,9 +24,9 @@
         <div class="content">
             <div class="content-2">
                 <label for="usuario">Usuario</label>
-                <input type="text" placeholder="Ingrese su usuario" name="usuario" class="input">
+                <input type="text" placeholder="Ingrese su usuario" name="usuario" class="input" required>
                 <label for="contrasena">Contraseña</label>
-                <input type="text" placeholder="Ingrese su contraseña" name="contrasena" class="input">
+                <input type="text" placeholder="Ingrese su contraseña" name="contrasena" class="input" required>
                 <label for="name" class="label-opacity"><a href="http://localhost/Universidad/Views/Register.php">No tienes contraseña? Registrate aquí.</a></label>
                 <button class="z" type="submit" name="iniciarSesion" value="iniciarSesion" > Iniciar Sesion</button>
             </div>
