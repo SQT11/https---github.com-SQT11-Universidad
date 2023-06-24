@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2023 a las 04:31:16
+-- Tiempo de generación: 24-06-2023 a las 19:20:29
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -39,12 +39,12 @@ CREATE TABLE `asignatura` (
 --
 
 INSERT INTO `asignatura` (`asig_id`, `asig_nombre`, `asig_descripcion`, `asig_facultad`) VALUES
-(1, 'Electricidad', 'Darle mantenimiento a las bobinas ', 'Electrica'),
+(1, 'diseño', 'Realizar diseños de todo tipo', 'artes'),
+(2, 'idiomas', 'Entendimiento de los idiomas', 'artes'),
 (3, 'literatura', 'Comprension y analisis', 'humanidades'),
-(4, 'Filosofia', 'El porque del todo', 'Humanidades'),
-(5, 'musica', 'Sincronia con la musica', 'artes y humanidades'),
-(6, 'Teatro', 'Actuacion y mas', 'Artes y Humanidades'),
-(7, 'programacion', 'Realizar diseños de frontend y darle funcionalidad con backend', 'tecnologia');
+(4, 'filosofia', 'El porque del todo', 'humanidades'),
+(6, 'teatro', 'actuacion y mas', 'artes y humanidades'),
+(9, 'prueba', 'prueba', 'prueba');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,15 @@ CREATE TABLE `calificacion` (
 --
 
 INSERT INTO `calificacion` (`cal_id`, `cal_calificacion`, `cal_porcentaje`, `per_id`, `asig_id`, `mat_id`) VALUES
-(15, 3.5, 100, NULL, NULL, NULL);
+(1, 5, 100, 1, 4, NULL),
+(2, 4, 100, 2, 2, NULL),
+(3, 3.5, 100, 3, 3, NULL),
+(4, 2, 100, 4, 4, NULL),
+(6, 5, 100, 6, 6, NULL),
+(7, 3.5, 100, 7, 1, NULL),
+(9, 2, 100, 9, 4, NULL),
+(11, 2, 100, 11, 6, NULL),
+(14, 2, 10, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -79,17 +87,6 @@ CREATE TABLE `matricula` (
   `per_id` int(11) DEFAULT NULL,
   `asig_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `matricula`
---
-
-INSERT INTO `matricula` (`mat_id`, `per_id`, `asig_id`) VALUES
-(3, 1, 6),
-(4, NULL, NULL),
-(5, NULL, NULL),
-(6, NULL, NULL),
-(7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -112,17 +109,21 @@ CREATE TABLE `persona` (
 
 INSERT INTO `persona` (`per_id`, `per_nombre`, `per_documento`, `per_correo`, `per_telefono`, `per_tipo`) VALUES
 (1, 'Santiago Quintero Torres', 1007232017, 'ensanyquintero@gmail.com', 2147483647, 'Estudiante'),
-(3, 'Katherine Buritica', 1002592561, 'Kathe03buritica@gmail.com', 2147483647, 'Docente'),
+(2, 'Estefania lopez torres', 123123123, 'estefania@gmail.com', 2147483647, 'Estudiante'),
+(3, 'katherine buritica', 121321321, 'kathe@gmail.com', 2147483647, 'Estudiante'),
 (4, 'Luz mirian castañeda', 13232323, 'luz@gmail.com', 2147483647, 'Estudiante'),
 (5, 'Alvaro javier torres', 156456321, 'alvaro@gmail.com', 2147483647, 'Estudiante'),
 (6, 'Salome murcia Torres', 1214567654, 'salo@gmail.com', 2147483647, 'Estudiante'),
 (7, 'luisa fernanda torres', 2147483647, 'luisa@gmail.com', 324567890, 'Estudiante'),
 (8, 'elver galarga ', 100832156, 'elver@gmail.com', 2147483647, 'Estudiante'),
-(9, 'JJ', 123123, '123@gmail.com', 1231231, 'Docente'),
+(9, 'pepitp perez', 1207898978, 'pepito@gmail.com', 2147483647, 'Estudiante'),
 (11, 'carmenza toro', 100890675, 'carmenza@gmail.com', 2147483647, 'Estudiante'),
 (12, 'luz de sol ', 100078908, 'luzsol@gmail.com', 2147483647, 'Estudiante'),
-(50, 'hersibian quintero', 123123, 'her@gmail.com', 1231231, 'Docente'),
-(51, 'melany quintero', 222222, 'her@gmail.com', 3123123, 'Docente');
+(13, 'wewe', 2, 'sdf', 2, ''),
+(15, 'carlos', 123, 'c@c.com', 987, 'prueba'),
+(16, 'aaaaa', 123123, 'aaa@.com', 32131231, 'opcion2'),
+(17, 'ddddd', 333333, 'ensantyquintero@gmail.com', 555555, 'prueba'),
+(19, 'aaaaaaaaaaaa', 2222222, 'aaaaa@.com', 1233123, 'Docente');
 
 -- --------------------------------------------------------
 
@@ -131,21 +132,20 @@ INSERT INTO `persona` (`per_id`, `per_nombre`, `per_documento`, `per_correo`, `p
 --
 
 CREATE TABLE `registro` (
-  `reg_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `reg_usuario` varchar(100) DEFAULT NULL,
   `reg_contrasena` varchar(100) DEFAULT NULL,
   `reg_correo` varchar(100) DEFAULT NULL,
-  `per_id` int(11) DEFAULT NULL,
-  `reg_tipo` varchar(50) DEFAULT NULL
+  `reg_tipo` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `registro`
 --
 
-INSERT INTO `registro` (`reg_id`, `reg_usuario`, `reg_contrasena`, `reg_correo`, `per_id`, `reg_tipo`) VALUES
-(1, 'Santiago', '123', 'ensantyquintero@gmail.com', NULL, 'Array'),
-(2, 'carlos', '123', 'Prueba3@.com', NULL, 'Docente');
+INSERT INTO `registro` (`id`, `reg_usuario`, `reg_contrasena`, `reg_correo`, `reg_tipo`) VALUES
+(1, 'carlos', '123', 'carlos123@gmail.com', 'Estudiante'),
+(2, 'Santiago', '123', 'Santiago123@gmail.com', 'Estudiante');
 
 -- --------------------------------------------------------
 
@@ -165,8 +165,8 @@ CREATE TABLE `salon` (
 --
 
 INSERT INTO `salon` (`sal_id`, `sal_nombre`, `sal_cantidad`, `asig_id`) VALUES
-(1, 'Telematica', 25, NULL),
-(3, 'Teleinformatica', 40, NULL);
+(2, 'Teleinformatica', 30, NULL),
+(3, 'Cancha Sena', 500, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -205,8 +205,7 @@ ALTER TABLE `persona`
 -- Indices de la tabla `registro`
 --
 ALTER TABLE `registro`
-  ADD PRIMARY KEY (`reg_id`),
-  ADD KEY `per_id` (`per_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `salon`
@@ -223,31 +222,31 @@ ALTER TABLE `salon`
 -- AUTO_INCREMENT de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  MODIFY `asig_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `asig_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `calificacion`
 --
 ALTER TABLE `calificacion`
-  MODIFY `cal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `cal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `matricula`
 --
 ALTER TABLE `matricula`
-  MODIFY `mat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `mat_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `salon`
@@ -273,12 +272,6 @@ ALTER TABLE `calificacion`
 ALTER TABLE `matricula`
   ADD CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`per_id`) REFERENCES `persona` (`per_id`),
   ADD CONSTRAINT `matricula_ibfk_2` FOREIGN KEY (`asig_id`) REFERENCES `asignatura` (`asig_id`);
-
---
--- Filtros para la tabla `registro`
---
-ALTER TABLE `registro`
-  ADD CONSTRAINT `registro_ibfk_1` FOREIGN KEY (`per_id`) REFERENCES `persona` (`per_id`);
 
 --
 -- Filtros para la tabla `salon`
