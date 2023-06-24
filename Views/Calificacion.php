@@ -29,7 +29,7 @@
 
 
     <div class="formulario">
-      <form action="../includes/calificacion.php" method="POST">
+      <form action="../Controller/CalificacionController.php" method="POST">
         <!-- Aquí van los campos del formulario -->
         <input type="text" name="idcalificacion" placeholder="ID Calificacion">
         <input type="text" name="calificacion" placeholder="Calificación"  require>
