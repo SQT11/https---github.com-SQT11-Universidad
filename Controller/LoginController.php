@@ -1,6 +1,13 @@
 <?php
-require_once '../core/config.php';
-require_once '../Models/LoginModel.php';
+// require_once '../core/config.php';
+// require_once '../Models/LoginModel.php';
+
+$rutaCarpeta = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+$rutaProyecto = explode("/", $rutaCarpeta);
+
+require_once $_SERVER['DOCUMENT_ROOT']. "/" . $rutaProyecto[1] .'/Models/LoginModel.php';
+require_once $_SERVER['DOCUMENT_ROOT']. "/" . $rutaProyecto[1] .'/core/config.php';
+
 
 class UserController {
     public function login($username, $password) {

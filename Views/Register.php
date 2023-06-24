@@ -12,13 +12,13 @@
 <body>
     <nav>
         <div class=" profile-pic">
-    <img src="../Fotos/Logo.jpg" alt="Foto de perfil">
+    <img src="../images/Logo.jpg" alt="Foto de perfil">
     </div>
     <ul>
-        <li><a href="/Views/Home.php">Home</a></li>
+        <li><a href="../Views/Home.php">Home</a></li>
     </ul>
     <div class="login-btn">
-        <a class="btn-login" href="/Views/login.php">Iniciar sesión</a>
+        <a class="btn-login" href="../Views/login.php">Iniciar sesión</a>
     </div>
     </nav>
     
@@ -30,7 +30,7 @@
                 </div>
 
                 <label for="name">Tipo</label>
-                <select class="dropdown" name="tipo[]" multiple>
+                <select class="dropdown" name="tipo[]" >
                     <option> </option>
                     <option value="Estudiante">Estudiante</option>
                     <option value="Docente">Docente</option>
@@ -41,7 +41,7 @@
                 <input type="text" placeholder="Ingrese su contraseña" class="input" name="contrasena">
                 <label for="correo">Correo</label>
                 <input type="text" placeholder="Correo Electronico" class="input" name="correo">
-                <button type="submit" name="registrar" value="registrar">Registrarse</button>
+                <button class="z"type="submit" name="registrar" value="registrar">Registrarse</button>
             </div>
         </div>
     </form>

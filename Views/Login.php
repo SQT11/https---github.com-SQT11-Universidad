@@ -10,7 +10,7 @@
 <body>
     <nav>
         <div class="profile-pic">
-            <img src="../Fotos/Logo.jpg" alt="Foto de perfil">
+            <img src="../images/Logo.jpg" alt="Foto de perfil">
         </div>
         <ul>
             <li><a href="http://localhost/Universidad/Views/Home.php">Home</a></li>
@@ -28,7 +28,7 @@
                 <label for="contrasena">Contraseña</label>
                 <input type="text" placeholder="Ingrese su contraseña" name="contrasena" class="input">
                 <label for="name" class="label-opacity"><a href="http://localhost/Universidad/Views/Register.php">No tienes contraseña? Registrate aquí.</a></label>
-                <button type="submit" name="iniciarSesion" value="iniciarSesion" > Iniciar Sesion</button>
+                <button class="z" type="submit" name="iniciarSesion" value="iniciarSesion" > Iniciar Sesion</button>
             </div>
         </div>
 

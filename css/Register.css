@@ -1,17 +1,21 @@
 body {
-    background-color: #3C4E6B;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   
   nav {
-    background-color: #9EA8B8;
     padding: 10px;
     display: flex;
     align-items: center;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   
   .profile-pic {
@@ -41,12 +45,12 @@ body {
   }
   
   nav ul li a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     padding: 10px;
   }
   nav ul li a:hover{
-    background-color: #5C626B;
+    background-color: #24243e;
   }
   
   .login-btn {
@@ -56,13 +60,14 @@ body {
   .btn-login {
     color: #fff;
     border-radius: 100px;
-    background-color: #3C4E6B;
+    background-color: #302b63;
     padding: 10px 20px;
     text-decoration: none;
+    border: 2px solid #000000; /* Agrega un borde sólido de 1 píxel */
   }
   
   .btn-login:hover {
-    background-color: #5C626B;
+    background-color: #24243e;
   }
   
   .content {
@@ -74,14 +79,16 @@ body {
   }
   
   .content-2 {
-    display: left;
-    flex-direction: column;
-    align-items: center;
-    background-color: #9EA8B8;
+    background-color: #302b63;
     border-radius: 50px;
-    padding: 15%;
-    max-width: 300px;
-    margin: 0 auto;
+    padding: 10%;
+    max-width: 200px;
+    margin: 0px auto;
+    border: 2px solid #000000; /* Agrega un borde sólido de 1 píxel */
+  }
+  
+  .z:hover{
+    background-color: #24243e;
   }
   
   .content-2 input[type="text"],
@@ -89,6 +96,14 @@ body {
     width: 100%;
     height: 25px;
     max-width: 300px;
+    padding: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+  .dropdown{
+    width: 100%;
+    height: 25px;
+    max-width: 222px;
     padding: 10px;
     margin-bottom: 40px;
     border-radius: 10px;

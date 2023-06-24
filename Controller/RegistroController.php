@@ -1,6 +1,14 @@
 <?php
-require_once '../core/config.php';
-require_once '../Models/registroModel.php';
+// require_once '../core/config.php';
+// require_once '../Models/registroModel.php';
+
+
+$rutaCarpeta = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+$rutaProyecto = explode("/", $rutaCarpeta);
+
+require_once $_SERVER['DOCUMENT_ROOT']. "/" . $rutaProyecto[1] .'/Models/RegistroModel.php';
+require_once $_SERVER['DOCUMENT_ROOT']. "/" . $rutaProyecto[1] .'/core/config.php';
+
 
 class RegisterController {
     private $registerModel;
